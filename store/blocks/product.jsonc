@@ -1,0 +1,51 @@
+{
+  // PDP basada en el minimum boilerplate theme de VTEX, con el badge de
+  // estimado de envío ubicado junto al precio y al botón de compra.
+  "store.product": {
+    "children": ["breadcrumb", "flex-layout.row#product-main"]
+  },
+
+  "flex-layout.row#product-main": {
+    "props": {
+      "colGap": 7,
+      "rowGap": "0",
+      "marginTop": 4,
+      "marginBottom": 7,
+      "paddingTop": 0,
+      "paddingBottom": 0
+    },
+    "children": ["flex-layout.col#product-images", "flex-layout.col#product-info"]
+  },
+
+  "flex-layout.col#product-images": {
+    "props": {
+      "width": "60%",
+      "rowGap": 0
+    },
+    "children": ["product-images"]
+  },
+
+  "flex-layout.col#product-info": {
+    "props": {
+      "preventVerticalStretch": true,
+      "rowGap": 0
+    },
+    "children": [
+      "product-name",
+      "product-identifier.product",
+      "product-price#product-details",
+      "shipping-estimate-badge#pdp",
+      "sku-selector",
+      "product-quantity",
+      "add-to-cart-button",
+      "product-description"
+    ]
+  },
+
+  "product-price#product-details": {
+    "props": {
+      "showInstallments": true,
+      "showSavings": true
+    }
+  }
+}

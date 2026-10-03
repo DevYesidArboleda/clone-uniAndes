@@ -1,0 +1,8 @@
+   query EstimateShipping($productId: ID!, $postalCode: String!, $demo: Boolean, $demoEndpointId: String) {
+     estimateShipping(productId: $productId, postalCode: $postalCode, demo: $demo, demoEndpointId: $demoEndpointId)
+       @context(provider: "laumayerb2b.shipping-estimate-badge") {
+       carrierName
+       estimatedDays
+       price
+     }
+   }

@@ -1,0 +1,22 @@
+type Query {
+  # TODO #8 (resuelto): la query recibe productId y postalCode, igual que la
+  # query del front (react/graphql/estimateShipping.graphql).
+  # demo / demoEndpointId: opcionales, solo para ver el badge con datos de prueba
+  # (se activan desde el Site Editor). Sin ellos el comportamiento es el normal.
+  # @auth(scope: PUBLIC): consulta publica para compradores 
+  # @cacheControl: la respuesta solo depende de los argumentos, se cachea por poco tiempo.
+  estimateShipping(
+    productId: ID!
+    postalCode: String!
+    demo: Boolean = false
+    demoEndpointId: String = ""
+  ): [ShippingEstimate!]!
+    @auth(scope: PUBLIC)
+    @cacheControl(scope: PUBLIC, maxAge: SHORT)
+}
+
+type ShippingEstimate {
+  carrierName: String!
+  estimatedDays: Int!
+  price: Float!
+}

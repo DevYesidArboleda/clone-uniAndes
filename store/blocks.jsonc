@@ -1,0 +1,14 @@
+{
+  // Bloque de ejemplo para usar el badge en la página de producto (PDP).
+  // TODO #1: este archivo tiene un error de sintaxis JSONC que impide
+  // que el builder "store" compile. Encuéntralo y corrígelo.
+   // TODO #1 (resuelto): faltaba la coma después de "showCarrierName": true,
+  // lo que hacía inválido el JSONC y el builder "store" no compilaba.
+  // El bloque se usa en store/blocks/product.jsonc (template store.product).
+  "shipping-estimate-badge#pdp": {
+    "props": {
+      "showCarrierName": true,
+      "blockClass": "pdp"
+    }
+  }
+}
